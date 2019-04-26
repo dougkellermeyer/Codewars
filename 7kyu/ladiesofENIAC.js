@@ -16,4 +16,4 @@ function radLadies(name){
    return lettersJoin.toUpperCase();
 }
 
-console.log(radLadies("u 3H5KK57UwG 1YSB3pUZvhm!iWdx5PQZ"))
+console.log(radLadies("///$%&£$553791£r357%??@$%u?$%@7993111£@$%t£$h3% 3$£l$311i3%@?&c3£h%&t&&?%11e%$?@11957r79%£&£m$$a55n1!111%%"))
