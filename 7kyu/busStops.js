@@ -14,5 +14,16 @@
 
 var number = function(busStops){
 
+    let people = 0;
+
+        for (let i = 0; i < busStops.length; i++){
+            people += busStops[i][0]
+            people -= busStops[i][1]
+        }
+        
+    return people;
 }
+
+console.log(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]));
+
 
