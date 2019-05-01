@@ -11,16 +11,31 @@ function persistence(num){
     if (num >=1 && num <= 9){
         return 0;
     } else {
-    // put the number into a string, multiply each digit together (forEach or reduce??)
-        var numArray = (num.toString().split(''))
-        var tmp = numArray.reduce((acc, curVal) => {
-            return 
-        },0)
+    
+        var numStr = num.toString()
+        var numArray = [] //[1,2]
+
+        for(let i = 0; i < numStr.length; i++){
+            numArray.push(+numStr.charAt(i));
+        }
+
+        var reduceArray = numArray.reduce((acc, curVal) => {
+            return acc * curVal
+        })
+
+        tmp = reduceArray.toString()
+        console.log(tmp.length)
+        if (tmp.length === 1){
+            console.log("equal to 1")
+        }else {
+            console.log("more than 1 digit")
+            var numArray2 = [] 
+
+            for(let j = 0; j < tmp.length; j++){
+                numArray2.push(+tmp.charAt(j));
+            }
+        }
     }
-
-
-    // if > 1, split then multiply and check to see if product is = 1 digit
-    return num
 }
 
-console.log(persistence(10))
+persistence(99) //1
