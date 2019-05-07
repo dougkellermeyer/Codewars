@@ -9,17 +9,13 @@
 // For example:
 
 function checkExam(array1, array2){
-    //compare two arrays for matches, +4 for a match, -1 for a non-match
     var grade = 0;
 
     for(let i = 0; i < array1.length; i++){
-        for(let j = 0; j < array2.length; j++){
-            if(array1[i] === array2[j]){
-                grade++
-            }
-        }
+        if(array1[i] === '' || array2[i] === ''){continue}
+            array1[i]===array2[i] ? grade += 4 : grade--
     }
-    return grade //why 3? should just be 1
+    return grade < 0 ? 0 : grade 
 
 }
 
