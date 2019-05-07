@@ -8,3 +8,19 @@
 // If the score < 0, return 0.
 // For example:
 
+function checkExam(array1, array2){
+    //compare two arrays for matches, +4 for a match, -1 for a non-match
+    var grade = 0;
+
+    for(let i = 0; i < array1.length; i++){
+        for(let j = 0; j < array2.length; j++){
+            if(array1[i] === array2[j]){
+                grade++
+            }
+        }
+    }
+    return grade //why 3? should just be 1
+
+}
+
+console.log(checkExam(["a","b","c"], ["a","c","b"])) //=> 2
