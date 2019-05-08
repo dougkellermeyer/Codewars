@@ -14,8 +14,10 @@ function high(x) {
     const letters = 'abcdefghijklmnopqrstuvwxyz';
     
     var letterArray =  x.toLowerCase()
-                        .split('')
-                        .map(t => letters.indexOf(t)+1)
+                        .split(' ')
+                        // break it into an array of words
+                        // then run the reduce on that array
+                        .reduce((a,b) => a+b)
     return letterArray
   }
 
