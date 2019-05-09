@@ -10,16 +10,28 @@
 
 // All letters will be lowercase and all inputs will be valid.
 
-const letters = 'abcdefghijklmnopqrstuvwxyz';
-const string = "never stop living"
 
-function splitWords(x) {
-    
-   return x.toLowerCase().split(' ') //['never', 'stop', 'living']
+function high(x){
+  if(x === ''){
+    return false
+  }else {
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+
+
+    var splitArray = x.toLowerCase().split(' ')
+
+    letterValues = []
+
+    for(let i = 0; i < splitArray.length; i++){
+      letterValues.push(splitArray[i]
+                      .split('')
+                      .map(l => letters.indexOf(l)+1)
+                      .reduce((a,b) => a+b)
+      )
+    }
+    return splitArray[letterValues.indexOf(Math.max(...letterValues))]
+  }
 }
 
-function findIndex(){
-  var indexedArray = splitWords(string)
-  return indexedArray
-}
+console.log(high(""))
 
