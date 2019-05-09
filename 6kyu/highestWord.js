@@ -12,7 +12,7 @@
 
 
 function high(x){
-  if(x === ''){
+  if(x.length <= 1){
     return false
   }else {
     const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -33,5 +33,5 @@ function high(x){
   }
 }
 
-console.log(high(""))
+console.log(high("."))
 
