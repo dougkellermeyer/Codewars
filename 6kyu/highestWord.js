@@ -10,15 +10,16 @@
 
 // All letters will be lowercase and all inputs will be valid.
 
-function high(x) {
-    const letters = 'abcdefghijklmnopqrstuvwxyz';
-    
-    var letterArray =  x.toLowerCase()
-                        .split(' ')
-                        // break it into an array of words
-                        // then run the reduce on that array
-                        .reduce((a,b) => a+b)
-    return letterArray
-  }
+const letters = 'abcdefghijklmnopqrstuvwxyz';
+const string = "never stop living"
 
-console.log(high("never stop living"))
+function splitWords(x) {
+    
+   return x.toLowerCase().split(' ') //['never', 'stop', 'living']
+}
+
+function findIndex(){
+  var indexedArray = splitWords(string)
+  return indexedArray
+}
+
