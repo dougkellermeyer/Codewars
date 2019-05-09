@@ -12,9 +12,11 @@
 
 
 function high(x){
-  if(x.length <= 1){
+
+  if(x.length < 2 || x.length === 0){
     return false
   }else {
+    
     const letters = 'abcdefghijklmnopqrstuvwxyz';
 
 
