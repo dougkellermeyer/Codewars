@@ -11,7 +11,10 @@
 // 4. Divide the sum by 10, if the remainder = 0 return true, if not then return false
 
 function validate(n){
-    return n.map(x => x*2)
+    return n.reverse().map(function(value){
+        return n.indexOf(value) % 2 === 0 ?  value :  value * 2
+    })
 }
 
-console.log(validate([1,2,3,4]))
+console.log(validate([1,2,3,4])) // [4,6,2,2]
+
