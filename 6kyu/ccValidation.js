@@ -10,11 +10,15 @@
 // 3. Sum all the final digits (reduce would work well here)
 // 4. Divide the sum by 10, if the remainder = 0 return true, if not then return false
 
+//step 1 completed
+
 function validate(n){
     return n.reverse().map(function(value){
         return n.indexOf(value) % 2 === 0 ?  value :  value * 2
     })
 }
+
+//take the return from validate and complete step 2
 
 console.log(validate([1,2,3,4])) // [4,6,2,2]
 
