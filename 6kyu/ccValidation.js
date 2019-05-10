@@ -12,13 +12,23 @@
 
 //step 1 completed
 
-function validate(n){
-    return n.reverse().map(function(value){
-        return n.indexOf(value) % 2 === 0 ?  value :  value * 2
-    })
+function validate(x){
+    //double every other index in the array
+    var valReturnArray =  firstStep(x)
+
+    function firstStep(n){
+        var numArray = n.toString().split("").map(Number)
+        return numArray.reverse().map(value => numArray.indexOf(value) % 2 === 0 ? value : value * 2)
+    }
+
+        //loop through the array and subtract 9 from anything > 9 
+        for(let i = 0; i < valReturnArray.length; i++){
+           if(valReturnArray[i] > 9){
+            valReturnArray[i]=valReturnArray[i]-=9
+           }
+        }
+        //reduce the array and see if the cc number is valid
+        return valReturnArray.reduce((a,b)=>a+b) % 10 === 0 ? true: false
 }
 
-//take the return from validate and complete step 2
-
-console.log(validate([1,2,3,4])) // [4,6,2,2]
-
+console.log(validate([5454])) //true
