@@ -15,7 +15,6 @@
 function validate(x){
     //double every other index in the array
     var valReturnArray =  firstStep(x)
-    console.log(valReturnArray)
 
     function firstStep(n){
         var numArray = n.toString().split("").map(Number)
@@ -42,4 +41,4 @@ function validate(x){
         return valReturnArray.reduce((a,b)=>a+b) % 10 === 0 ? true: false
 }
 
-console.log(validate([1230])) //true
+console.log(validate([5454])) //true
