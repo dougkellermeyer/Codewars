@@ -15,10 +15,21 @@
 function validate(x){
     //double every other index in the array
     var valReturnArray =  firstStep(x)
+    console.log(valReturnArray)
 
     function firstStep(n){
-        var numArray = n.toString().split("").map(Number)
-        return numArray.reverse().map(value => numArray.indexOf(value) % 2 === 0 ? value : value * 2)
+        var numArray = n.toString().split("").map(Number).reverse()
+        // If there are an even number of digits, double every other digit starting with the first; if there are an odd number of digits, double every other digit starting with the second
+        var numArray2 = [];
+
+        for(let i = 0; i < numArray.length; i++){
+            if(numArray.length % 2 === 0){
+                i % 2 === 0 ? numArray2.push(numArray[i] * 2) : numArray2.push(numArray[i])
+            } else{
+                i % 2 === 0 ? numArray2.push(numArray[i]) : numArray2.push(numArray[i] * 2)
+            }
+        }
+        return numArray2
     }
 
         //loop through the array and subtract 9 from anything > 9 
@@ -27,8 +38,8 @@ function validate(x){
             valReturnArray[i]=valReturnArray[i]-=9
            }
         }
-        //reduce the array and see if the cc number is valid
+        // // reduce the array and see if the cc number is valid
         return valReturnArray.reduce((a,b)=>a+b) % 10 === 0 ? true: false
 }
 
-console.log(validate([5454])) //true
+console.log(validate([54545])) //true
