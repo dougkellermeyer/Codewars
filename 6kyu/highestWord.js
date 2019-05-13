@@ -16,7 +16,7 @@ function high(x){
   if(x.length < 2 || x.length === 0){
     return false
   }else {
-    
+
     const letters = 'abcdefghijklmnopqrstuvwxyz';
 
 
@@ -28,7 +28,7 @@ function high(x){
       letterValues.push(splitArray[i]
                       .split('')
                       .map(l => letters.indexOf(l)+1)
-                      .reduce((a,b) => a+b)
+                      .reduce((a,b) => a+b, 0)
       )
     }
     return splitArray[letterValues.indexOf(Math.max(...letterValues))]

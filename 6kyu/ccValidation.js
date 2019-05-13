@@ -18,7 +18,7 @@ function validate(x){
     console.log(valReturnArray)
 
     function firstStep(n){
-        var numArray = n.toString().split("").map(Number).reverse()
+        var numArray = n.toString().split("").map(Number)
         // If there are an even number of digits, double every other digit starting with the first; if there are an odd number of digits, double every other digit starting with the second
         var numArray2 = [];
 
@@ -29,7 +29,7 @@ function validate(x){
                 i % 2 === 0 ? numArray2.push(numArray[i]) : numArray2.push(numArray[i] * 2)
             }
         }
-        return numArray2
+        return numArray2.reverse()
     }
 
         //loop through the array and subtract 9 from anything > 9 
@@ -42,4 +42,4 @@ function validate(x){
         return valReturnArray.reduce((a,b)=>a+b) % 10 === 0 ? true: false
 }
 
-console.log(validate([54545])) //true
+console.log(validate([1230])) //true
