@@ -8,14 +8,18 @@
 // If a string contains all repeating characters, it should return an empty string ("") or None -- see sample tests.
 
 function firstNonRepeatingLetter(s) {
-    //look for repeat letters with regex or loop
-    if(s.length < 2 || s.length === 0){
-        return "None"
+    if(s.length <= 1 || s.length === 0){
+        return s
     } else {
     var repeatLetters = s.toLowerCase().split("").sort().join("").match(/(.)\1+/g)
     // now that we have the number of repeats, we need to identify the letters that
-    // do NOT repeat, specifically the first
-    return s.length === repeatLetters.length ? "" : repeatLetters.length
+    // do NOT repeat, and return the first letter
+    console.log(repeatLetters)
+
+    //maybe a slice/splice to remove the letters that match?
+
+
+    return s.length === repeatLetters.toString().length ? "None" : repeatLetters.length
     }
 }
 
