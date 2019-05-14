@@ -23,4 +23,4 @@ function firstNonRepeatingLetter(s) {
     }
 }
 
-console.log(firstNonRepeatingLetter('a'))
+console.log(firstNonRepeatingLetter('abca'))
