@@ -23,4 +23,4 @@ function firstNonRepeatingLetter(s) {
     }
 }
 
-console.log(firstNonRepeatingLetter('abca'))
+console.log(firstNonRepeatingLetter('stress'))
