@@ -18,15 +18,12 @@ function firstNonRepeatingLetter(s) {
 
     for(let i = 0; i < s.length; i++){
         for (let j = 0; j < repeatArray.length; j++){
-          if(s[i] !== repeatArray[j]){
-              var noRepeat = s.slice([j])
+          if(s[i] === repeatArray[j]){
+              var noRepeat = s.slice(s[i],[j])
             }
         }
     }
-
-    return noRepeat
-
-    return s.length === repeatLetters.toString().length ? "None" : repeatLetters.length
+    return s.length === repeatLetters.toString().length ? "None" : noRepeat
     }
 }
 
