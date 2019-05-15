@@ -14,10 +14,17 @@ function firstNonRepeatingLetter(s) {
     var repeatLetters = s.toLowerCase().split("").sort().join("").match(/(.)\1+/g)
     // now that we have the number of repeats, we need to identify the letters that
     // do NOT repeat, and return the first letter
-    console.log(repeatLetters)
+    var repeatArray = repeatLetters.toString().split("")
 
-    //maybe a slice/splice to remove the letters that match?
-
+    var sSplit = s.split("");
+    var count = 0;
+    console.log(count)
+    for(let i = 0; i < sSplit.length; i++){
+        for (let j = 0; j < repeatArray.length; j++){
+          if(sSplit[i] === repeatArray[j]){
+              count++
+        }
+    }
 
     return s.length === repeatLetters.toString().length ? "None" : repeatLetters.length
     }
