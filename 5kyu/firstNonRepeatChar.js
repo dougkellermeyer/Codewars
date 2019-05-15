@@ -16,15 +16,15 @@ function firstNonRepeatingLetter(s) {
     // do NOT repeat, and return the first letter
     var repeatArray = repeatLetters.toString().split("")
 
-    var sSplit = s.split("");
-    var count = 0;
-    console.log(count)
-    for(let i = 0; i < sSplit.length; i++){
+    for(let i = 0; i < s.length; i++){
         for (let j = 0; j < repeatArray.length; j++){
-          if(sSplit[i] === repeatArray[j]){
-              count++
+          if(s[i] !== repeatArray[j]){
+              var noRepeat = s.slice([j])
+            }
         }
     }
+
+    return noRepeat
 
     return s.length === repeatLetters.toString().length ? "None" : repeatLetters.length
     }
