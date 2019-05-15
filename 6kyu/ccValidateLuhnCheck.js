@@ -13,3 +13,5 @@ const luhnChk = value => {
   
     return sum && sum % 10 === 0
   }
+
+  console.log(luhnChk(5454))
