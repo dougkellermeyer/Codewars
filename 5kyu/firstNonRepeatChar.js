@@ -12,15 +12,19 @@ function firstNonRepeatingLetter(s) {
         return s
     } else {
     var repeatLetters = s.toLowerCase().split("").sort().join("").match(/(.)\1+/g)
-    var splitRepeatLetters = repeatLetters.toString().split("")
+    var splitRepeatLetters = repeatLetters.join("").split("")
     var stringSplit = s.split("")
+
+    var noRepeat = [];
 
     for(let i = 0; i < stringSplit.length; i++){
         for (let j = 0; j < splitRepeatLetters.length; j++){
-        //when a letter in the string (s) != the repeated letter, slice it out and return it
           if(stringSplit[i] !== splitRepeatLetters[j]){
+              let idxStart = stringSplit.indexOf(stringSplit[i])
+              let idxEnd = stringSplit.indexOf(stringSplit[i+1])
+              console.log(idxStart,idxEnd)
 
-              var noRepeat = stringSplit.slice(1,2) // 't'
+              noRepeat.push(stringSplit.slice(idxStart,idxEnd))
             }
         }
     }
@@ -28,4 +32,4 @@ function firstNonRepeatingLetter(s) {
     }
 }
 
-console.log(firstNonRepeatingLetter('stress'))
+console.log(firstNonRepeatingLetter('moonmen'))
