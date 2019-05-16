@@ -7,29 +7,48 @@
 
 // If a string contains all repeating characters, it should return an empty string ("") or None -- see sample tests.
 
-function firstNonRepeatingLetter(s) {
-    if(s.length <= 1 || s.length === 0){
-        return s
-    } else {
-    var repeatLetters = s.toLowerCase().split("").sort().join("").match(/(.)\1+/g)
-    var splitRepeatLetters = repeatLetters.join("").split("")
-    var stringSplit = s.split("")
+// let sMap = function(){
+//     this.collection = {};
+//     this.count = 0;
+//     this.size = function(){
+//         return this.count;
+//     };
+//     this.set = function(key, value){
+//         this.collection[key] = value;
+//         this.count++
+//     };
+//     this.get = function(key) {
+// 		return (key in this.collection) ? this.collection[key] : null;
+// 	};
+//     this.values = function() {
+//         let result = new Array();
+//         for (let key of Object.keys(this.collection)) {
+//             result.push(this.collection[key]);
+//         };
+//         return (result.length > 0) ? result : null;
+//     };
+// }
 
-    var noRepeat = [];
+var str = "stress"
 
-    for(let i = 0; i < stringSplit.length; i++){
-        for (let j = 0; j < splitRepeatLetters.length; j++){
-          if(stringSplit[i] !== splitRepeatLetters[j]){
-              let idxStart = stringSplit.indexOf(stringSplit[i])
-              let idxEnd = stringSplit.indexOf(stringSplit[i+1])
-              console.log(idxStart,idxEnd)
-
-              noRepeat.push(stringSplit.slice(idxStart,idxEnd))
-            }
-        }
-    }
-    return s.length === splitRepeatLetters.length ? "None" : noRepeat.toString()
+function makeStrArray(str){
+    for(let i=0;i<str.length;i++){
+        
     }
 }
 
-console.log(firstNonRepeatingLetter('moonmen'))
+var strArray = [
+    ["s",1],
+    ["t",2],
+    ["r",3],
+]
+
+let map = new Map(strArray);
+console.log(map.values())
+
+let sMap = new Map();
+sMap.set("s",1);
+sMap.set("t",1)
+
+console.log(sMap.get('s'))
+console.log(sMap.entries())
