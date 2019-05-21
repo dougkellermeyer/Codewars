@@ -33,9 +33,11 @@ var str = "stress"
 
 function makeStrArray(str){
     for(let i=0;i<str.length;i++){
-        
+
     }
 }
+
+//feeding array into map
 
 var strArray = [
     ["s",1],
@@ -45,6 +47,8 @@ var strArray = [
 
 let map = new Map(strArray);
 console.log(map.values())
+
+//-------setting manually----
 
 let sMap = new Map();
 sMap.set("s",1);
