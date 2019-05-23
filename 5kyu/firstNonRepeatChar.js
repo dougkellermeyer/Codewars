@@ -7,52 +7,36 @@
 
 // If a string contains all repeating characters, it should return an empty string ("") or None -- see sample tests.
 
-// let sMap = function(){
-//     this.collection = {};
-//     this.count = 0;
-//     this.size = function(){
-//         return this.count;
-//     };
-//     this.set = function(key, value){
-//         this.collection[key] = value;
-//         this.count++
-//     };
-//     this.get = function(key) {
-// 		return (key in this.collection) ? this.collection[key] : null;
-// 	};
-//     this.values = function() {
-//         let result = new Array();
-//         for (let key of Object.keys(this.collection)) {
-//             result.push(this.collection[key]);
-//         };
-//         return (result.length > 0) ? result : null;
-//     };
-// }
-
 var str = "stress"
 
-function makeStrArray(str){
-    for(let i=0;i<str.length;i++){
-
+function groupBy (fn, arr) {
+    return arr.reduce((acc, v) => {
+      const k = fn(v)
+  
+      if (acc.hasOwnProperty(k)) {
+        acc[k].push(v)
+      } else {
+        acc[k] = [v]
+      }
+  
+      return acc
+    }, {})
+  }
+  
+  function firstNonRepeatingLetter (str) {
+    const group = groupBy(x => x.toLowerCase(), str.split(''))
+    const keys = Object.keys(group)
+    const len = keys.length
+  
+    for (let i = 0; i < len; i++) {
+      const val = group[keys[i]]
+  
+      if (val.length === 1) {
+        return val[0]
+      }
     }
-}
+  
+    return ''
+  }
 
-//feeding array into map
-
-var strArray = [
-    ["s",1],
-    ["t",2],
-    ["r",3],
-]
-
-let map = new Map(strArray);
-console.log(map.values())
-
-//-------setting manually----
-
-let sMap = new Map();
-sMap.set("s",1);
-sMap.set("t",1)
-
-console.log(sMap.get('s'))
-console.log(sMap.entries())
+  console.log(firstNonRepeatingLetter(str))
