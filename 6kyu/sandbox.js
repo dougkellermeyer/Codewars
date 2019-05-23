@@ -24,4 +24,4 @@ function firstNonRepeatingLetter(s) {
     }
 }
 
-firstNonRepeatingLetter('aaa')
+console.log(firstNonRepeatingLetter('aaab'))
