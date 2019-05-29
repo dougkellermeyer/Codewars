@@ -13,5 +13,4 @@ function frequencies (coll) {
   
     return results
   }
-  
-  console.log(frequencies('javascript'))
+

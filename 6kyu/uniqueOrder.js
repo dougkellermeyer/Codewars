@@ -13,3 +13,4 @@ function uniqueInOrder (list) {
   }
 
   console.log(uniqueInOrder('AAAABBBCCDAABBB'))
+

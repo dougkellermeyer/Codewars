@@ -2,21 +2,27 @@
 //portion of str1 characters can be rearranged to match str2, 
 //otherwise returns false.
 
-function scramble(str1,str2){
-
-    var matchArr = [];
-    for(let i = 0; i < str1.length; i++){
-        for(let j = 0; j < str2.length; j++){
-            if(str1[i] === str2[j]){
-                matchArr.push(str1[i])
-            }
-        }
+function frequencies (coll) {
+    const results = {}
+  
+    for (let i = 0, len = coll.length; i < len; i++) {
+      const v = coll[i]
+  
+      if (results[v]) {
+        results[v] += 1
+      } else {
+        results[v] = 1
+      }
     }
+  
+    return results
+  }
 
-    var strSorted = str2.split('').sort().join('')
-    var matchArrSorted = matchArr.join('').split('').sort().join('')
-
-    return matchArrSorted === strSorted ? true : false
-}
-
-console.log(scramble('olkpqnksdwr','world'))
+function scramble (s1, s2) {
+    const scrambled = frequencies(s1)
+    const word = frequencies(s2)
+  
+    return s2.split('').every(k => scrambled[k] >= word[k])
+  }
+  
+  console.log(scramble('scriptingjava', 'javascript'))
