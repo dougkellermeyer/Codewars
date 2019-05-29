@@ -3,7 +3,7 @@
 //otherwise returns false.
 
 function scramble(str1,str2){
-    //rmemove nonmatching letters
+    //grab all the matching letters between the two strings
     if (str1.length && str2.length > 0) {
         var strJoin = str1.concat(str2)
         var duplicates = strJoin.toLowerCase().split("").sort().join("").match(/(.)\1+/g)

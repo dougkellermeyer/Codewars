@@ -5,4 +5,4 @@ function duplicateCount(text){
     } return 0;
 }
 
-console.log(duplicateCount(""))
+console.log(duplicateCount("abca"))
