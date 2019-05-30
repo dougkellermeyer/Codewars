@@ -19,10 +19,10 @@ function frequencies (coll) {
   }
 
 function scramble (s1, s2) {
-    const scrambled = frequencies(s1)
-    const word = frequencies(s2)
+    const scrambled = frequencies(s1) // => { s: 1, c: 1, r: 1, i: 2, p: 1, t: 1, n: 1, g: 1, j: 1, a: 2, v: 1 }
+    const word = frequencies(s2) //=> { j: 1, a: 2, v: 1, s: 1, c: 1, r: 1, i: 1, p: 1, t: 1 }
   
     return s2.split('').every(k => scrambled[k] >= word[k])
   }
   
-  console.log(scramble('scriptingjava', 'javascript'))
+scramble('scriptingjava', 'javascript') //=> true
