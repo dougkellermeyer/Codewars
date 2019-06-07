@@ -25,4 +25,4 @@ function scramble (s1, s2) {
     return s2.split('').every(k => scrambled[k] >= word[k])
   }
   
-scramble('scriptingjava', 'javascript') //=> true
+console.log(scramble('scriptingjava', 'javascript')) //=> true

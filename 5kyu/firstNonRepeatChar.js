@@ -18,7 +18,6 @@ function groupBy (fn, arr) {
       } else {
         acc[k] = [v]
       }
-  
       return acc
     }, {})
   }
