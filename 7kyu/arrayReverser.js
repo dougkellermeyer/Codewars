@@ -5,9 +5,8 @@
 //Output: {"!", "eilt", "onn", "acIdn", "ast", "t", "ubgibe", "kilI"}
 
 const ultimateReverse = s => {
-    //return the array but with the items reversed
-    let arrReverse = s.reverse() //[ 'lie!', 'cannot', 'I', 'and', 'butts', 'big', 'like', 'I' ]
-    
+    //put into array of string object and then reverse every letter in string
+    return s.join('').split('').reverse()
 }
 
 console.log(ultimateReverse(["I", "like", "big", "butts", "and", "I", "cannot", "lie!"]))
