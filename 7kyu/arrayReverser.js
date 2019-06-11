@@ -6,7 +6,12 @@
 
 const ultimateReverse = s => {
     //put into array of string object and then reverse every letter in string
-    return s.join('').split('').reverse()
+    
+    let splitReverse = s.join('').split('').reverse()
+
+    //need to split the array of strings so that the length matches the lenght of the original items in the array
+    
+    return splitReverse
 }
 
 console.log(ultimateReverse(["I", "like", "big", "butts", "and", "I", "cannot", "lie!"]))
