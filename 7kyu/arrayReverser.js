@@ -11,7 +11,7 @@ const ultimateReverse = s => {
 
     //need to split the array of strings so that the length matches the lenght of the original items in the array
     
-    return splitReverse
+    return splitReverse.join('') // '!eiltonnacIdnasttubgibekilI'
 }
 
 console.log(ultimateReverse(["I", "like", "big", "butts", "and", "I", "cannot", "lie!"]))
