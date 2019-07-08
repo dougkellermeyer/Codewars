@@ -10,16 +10,22 @@ function sortArray(arr){
     //sort the odd ones but retain the postion of evens
     if(arr.length === 0 || arr === null){
         return arr
-    }
-    
-    //lets figure out which ones are odd
-    let oddArr = []
+    } else{
 
+    //grab the odds from our array
     const odds = arr.filter(num => num % 2 !== 0)
-    return odds.sort()
 
-    //need to return the sorted add numbers back to the original array
+    //sort the odds (using slice so that we don't mutate odds array)
+    const oddsSorted = odds.slice().sort((a,b) => a - b)
 
+        //replace the odd indexes of arr with the oddsSorted
+        for(i = 0; i < arr.length; i++){
+            if(arr[i] % 2 !== 0){
+                arr[i] = oddsSorted.shift()
+            }else{continue}
+        }
+        return arr
+    }
 }
 
-console.log(sortArray([5,3,2,8,1,4]))
+console.log(sortArray([2,22,1,11,4,37,5,0]))
