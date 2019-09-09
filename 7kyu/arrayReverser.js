@@ -14,6 +14,7 @@ const ultimateReverse = s => {
     for (let i = 0; i < s.length; i++){
         sLength.push(splitReverse.slice(0, s[i].length))
         splitReverse = splitReverse.slice(s[i].length)
+        console.log(splitReverse)
     }
     return sLength;
 }
