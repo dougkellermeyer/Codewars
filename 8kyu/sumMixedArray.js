@@ -10,6 +10,7 @@ function sumMix(a){
 
 sumMix(arr);
 
-const sumMix2 = arr=>arr.reduce((a,b)=>+b+a,0)
-
-console.log(sumMix2)
+//refactor using reduce instead of loop
+// function sumMix(x){
+//     return x.reduce((s,x)=>s+ +x,0);
+// }
