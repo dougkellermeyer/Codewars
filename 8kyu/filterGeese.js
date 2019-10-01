@@ -3,7 +3,7 @@ var birdsArr = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher",
 
 function gooseFilter (birds) {
     var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
-    return birds.filter(b => !geese.includes(b));
+    return birds.filter(brd => !geese.includes(brd));
 };
 
 console.log(gooseFilter(birdsArr));
