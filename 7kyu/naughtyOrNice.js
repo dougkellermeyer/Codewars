@@ -36,28 +36,26 @@ var jan =
     }
 };
 
-function naughtyOrNice(JSONdata) {
-//count the number of Naughtys and Nices, return whatever is great with 'Naughty!' or 'Nice!'
-//put object's key:value pairs into an array
-var objArray = Object.values(JSONdata);
-var countNaughty = 0;
-var countNice = 0;
+//Dustin's code
+function naughtyOrNice(data) {
+    const months = Object.keys(data)
 
-    for(let i = 0; i < objArray; i++){
-        console.log("for loop running")
-        if(objArray[i] === "Naughty"){
-            countNaughty++
-        }else{
-            countNice++
-        };
-    };
-
-if(countNaughty > countNice){
-    return "Naughty!"
-}else{
-    return "Nice!"
-}
-
-};
+    const { naughty, nice } = months.reduce((acc, k) => {
+      const list = Object.values(data[k])
+      console.log(list)
+      
+      list.forEach(v => {
+        if (v.toLowerCase() === 'naughty') {
+          acc.naughty++
+        } else {
+          acc.nice++
+        }
+      })
+      
+      return acc
+    }, { naughty: 0, nice: 0 })
+    
+    return naughty > nice ? 'Naughty!' : 'Nice!'
+  }
 
 console.log(naughtyOrNice(jan));
