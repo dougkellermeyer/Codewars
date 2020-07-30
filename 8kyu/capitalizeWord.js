@@ -11,9 +11,7 @@
 //   }
 
 function capitalizeWord(word) {
-    let firstLetter = word.slice(0,1).toUpperCase()
-    word.splice(0,1)
-    return word;
+    return word.slice(0,1).toUpperCase() + word.slice(1)
 };
 
-console.log(capitalizeWord("yo"));
+console.log(capitalizeWord("Hello"));
